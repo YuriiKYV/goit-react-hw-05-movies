@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import css from "../NavbarMenu/NavbarMenu.module.css";
 
 const getClassName = ({ isActive }) => {
+    console.log(isActive)
     return isActive ? `${css.navItemLink} ${css.active}` : `${css.navItemLink}`;
 }
 
