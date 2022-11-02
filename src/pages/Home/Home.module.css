@@ -1,0 +1,27 @@
+.homeTitle {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    color: black;
+    padding: 20px;
+}
+
+.homeList {
+    
+}
+
+.homeItem {
+    font-size: 15px;
+    padding: 1px;
+}
+
+.homeLink {
+    color: black;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.homeLink:focus,
+.homeLink:hover {
+    color: #e91e63;
+}

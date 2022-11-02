@@ -1,0 +1,40 @@
+.movieWrapper {
+    display: flex;
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+    padding: 10px;
+}
+
+.movieImage {
+    margin-right: 10px;
+}
+
+.backLink {
+    color: black;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backLink:focus,
+.backLink:hover {
+    color: #e91e63;
+}
+
+.castLink {
+    color: black;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        text-decoration: underline;
+}
+
+
+.castLink:focus,
+.castLink:hover {
+    color: #e91e63;
+}
+
+.castLink.active {
+    color: #e91e63;
+}
+
+.addInfoWrapp{
+    box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+    padding: 10px;
+}

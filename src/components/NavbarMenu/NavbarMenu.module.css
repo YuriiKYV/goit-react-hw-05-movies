@@ -19,11 +19,13 @@
     
 }
 
-.navItemLink.active {
-    color: #e91e63;
-}
+
 
 .navItemLink:focus,
 .navItemLink:hover {
+    color: #e91e63;
+}
+
+.navItemLink.active {
     color: #e91e63;
 }
