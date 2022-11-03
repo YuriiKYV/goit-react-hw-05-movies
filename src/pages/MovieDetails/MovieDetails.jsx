@@ -5,7 +5,6 @@ import css from '../MovieDetails/MovieDetails.module.css'
 import noPoster from "../MovieDetails/noPoster.jpg"
 
 const getClassName = ({ isActive }) => {
-    console.log(isActive)
     return isActive ? `${css.castLink} ${css.active}` : `${css.castLink}`;
 }
 
@@ -14,7 +13,6 @@ export default function MovieDetails() {
     const location = useLocation();
 
     const { movieId } = useParams();
-    console.log(movieId)
 
     useEffect(() => {
         const fetchMovie = async () => {
@@ -33,10 +31,7 @@ export default function MovieDetails() {
         return
     }
 
-    console.log(state)
     const { poster_path, title, vote_average, overview, genres, release_date } = state;
-    console.log(title)
-    console.log(location.state)
 
     return (
         <>

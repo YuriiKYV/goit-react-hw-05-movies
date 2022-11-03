@@ -15,7 +15,7 @@ export const App = () => {
   const fetchTrendMuvies = async () => {
     try {
       const result = await getTrendMuvies();
-      console.log(result)
+
       setMoviesDay(result)
     }
     catch (error) {
@@ -31,14 +31,17 @@ export const App = () => {
 
   return (
     <div className='app'>
-      <NavbarMenu />
       <Routes>
-        <Route path="/" element={<Home moviesDay={moviesDay} />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails moviesDay={moviesDay} />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
+        <Route path="/" element={<NavbarMenu />}>
+          <Route index element={<Home moviesDay={moviesDay} />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:movieId" element={<MovieDetails moviesDay={moviesDay} />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<div>Page doesn't exist</div>} />
         </Route>
+
 
       </Routes>
     </div>

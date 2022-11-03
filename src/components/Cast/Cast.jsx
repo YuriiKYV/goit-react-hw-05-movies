@@ -17,9 +17,6 @@ export const Cast = () => {
         return
     }
 
-    console.log(cast);
-
-
     return (
         <ul className={css.castList}>{cast.map(({ profile_path, name, character }) => (
             <li key={nanoid()}>
