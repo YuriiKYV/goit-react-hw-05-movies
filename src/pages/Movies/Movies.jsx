@@ -11,12 +11,15 @@ export default function Movies() {
     const [searchParams, setSearchParams] = useSearchParams();
     const query = searchParams.get('query') ?? "";
 
+    const location = useLocation();
+
     useEffect(() => {
         if (query === "") {
             return
         }
+
         getMovies(query);
-    }, [searchParams])
+    }, [query])
 
 
     const onSearch = ({ search }) => {
@@ -36,7 +39,7 @@ export default function Movies() {
         }
     }
 
-    const location = useLocation();
+
 
     const craeteItems = () => {
         if (movies.length) {
