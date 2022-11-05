@@ -5,7 +5,7 @@ import css from "../Cast/Cast.module.css"
 import { nanoid } from 'nanoid';
 import noPhoto from "../Cast/noPhoto.png"
 
-export const Cast = () => {
+const Cast = () => {
     const [cast, setCast] = useState([]);
     const { movieId } = useParams();
 
@@ -33,3 +33,5 @@ export const Cast = () => {
         ))}</ul>
     )
 }
+
+export default Cast;

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link, useLocation, NavLink, Outlet } from "react-router-dom";
 import { getMuviesId } from 'shared/api';
-import css from '../MovieDetails/MovieDetails.module.css'
-import noPoster from "../MovieDetails/noPoster.jpg"
+import css from 'pages/MovieDetails/MovieDetails.module.css'
+import noPoster from "pages/MovieDetails/noPoster.jpg"
 
 const getClassName = ({ isActive }) => {
     return isActive ? `${css.castLink} ${css.active}` : `${css.castLink}`;
@@ -54,11 +54,11 @@ export default function MovieDetails() {
             <div className={css.addInfoWrapp}>
                 <p>Additional information</p>
                 <ul className={css.addInfoList}>
-                    <li><NavLink className={getClassName} to="cast">Cast</NavLink></li>
-                    <li><NavLink className={getClassName} to="reviews">Reviews</NavLink></li>
+                    <li><NavLink className={getClassName} to="cast" state={{ from: location.state?.from }}>Cast</NavLink></li>
+                    <li><NavLink className={getClassName} to="reviews" state={{ from: location.state?.from }}>Reviews</NavLink></li>
                 </ul>
             </div>
-            <Outlet></Outlet>
+            <Outlet />
         </>
     )
 }

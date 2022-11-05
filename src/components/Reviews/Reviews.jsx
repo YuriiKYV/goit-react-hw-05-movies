@@ -4,7 +4,7 @@ import { getReviews } from "shared/api";
 import css from "../Reviews/Reviews.module.css"
 import { nanoid } from 'nanoid';
 
-export const Reviews = () => {
+const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     const { movieId } = useParams();
     const [error, setError] = useState(null);
@@ -34,8 +34,6 @@ export const Reviews = () => {
         return
     }
 
-
-
     return (
         <>
             {error && <p>{error.message}</p>}
@@ -48,3 +46,5 @@ export const Reviews = () => {
         </>
     )
 }
+
+export default Reviews;

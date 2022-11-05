@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { nanoid } from "nanoid";
 import { NavLink, Outlet } from "react-router-dom";
 import css from "../NavbarMenu/NavbarMenu.module.css";
@@ -7,7 +8,6 @@ const getClassName = ({ isActive }) => {
 }
 
 export default function NavbarMenu() {
-
 
     return (
         <>
@@ -19,7 +19,9 @@ export default function NavbarMenu() {
                     <NavLink className={getClassName} to="/movies" end>Movies</NavLink>
                 </li>
             </ul>
-            <Outlet />
+            <Suspense>
+                <Outlet />
+            </Suspense>
         </>
     )
 }

@@ -27,3 +27,19 @@ export async function getReviews(id) {
     //  const response = await fetch(`${BASE_URL}/movie/${id}/reviews?api_key=${API_KEY}&language=${LANGUAGE}&page=1`)
     return data.results;
 }
+
+export async function getMoviesByQuery(query) {
+    const {data} = await instance.get(`search/movie?api_key=${key}&language=en-US&page=1&query=${query}`)
+    //  const response = await fetch(`${BASE_URL}/movie/${id}/reviews?api_key=${API_KEY}&language=${LANGUAGE}&page=1`)
+    return data.results;
+}
+
+
+// export async function fetchMoviesByQuery(query) {
+//      const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&language=${LANGUAGE}&page=1&query=${query}`)
+//     if (response.ok) {
+//         const data = await response.json()
+//         return data.results
+//     }
+//     return new Error()
+// }
