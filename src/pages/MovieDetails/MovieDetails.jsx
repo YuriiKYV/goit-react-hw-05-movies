@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useParams, Link, useLocation, NavLink, Outlet } from "react-router-dom";
 import { getMuviesId } from 'shared/api';
 import css from 'pages/MovieDetails/MovieDetails.module.css'
@@ -58,7 +58,10 @@ export default function MovieDetails() {
                     <li><NavLink className={getClassName} to="reviews" state={{ from: location.state?.from }}>Reviews</NavLink></li>
                 </ul>
             </div>
-            <Outlet />
+            <Suspense>
+                <Outlet />
+            </Suspense>
+
         </>
     )
 }

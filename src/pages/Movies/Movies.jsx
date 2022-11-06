@@ -55,7 +55,7 @@ export default function Movies() {
 
 
     return (
-        <div><SearchBox onSubmit={onSearch} />
+        <div><SearchBox onSubmit={onSearch} query={query} />
             <ul>{items}</ul>
         </div>
     )

@@ -3,9 +3,9 @@ import css from 'components/SearchBox/SearchBox.module.css';
 import { nanoid } from 'nanoid';
 import { PropTypes } from 'prop-types';
 
-export default function SearchBox({ onSubmit }) {
+export default function SearchBox({ onSubmit, query }) {
 
-    const [search, setSearch] = useState('');
+    const [search, setSearch] = useState(query || '');
     const [searchField, setSearchField] = useState({
         lable: 'Searcg',
         name: 'search',
@@ -54,4 +54,5 @@ export default function SearchBox({ onSubmit }) {
 
 SearchBox.propTypes = {
     onSubmit: PropTypes.func.isRequired,
+    query: PropTypes.string.isRequired,
 };
